@@ -137,3 +137,4 @@ const game =(nome)=>{
   if(lista.length===0){
     document.getElementById('advise').innerHTML = "Bravissimo hai vinto!!! Alessandro Magno sarebbe orgoglioso di te";
   }
+}
