@@ -1,0 +1,28 @@
+#tit {
+  background: url("https://s3-eu-west-1.amazonaws.com/dailybestpubblici/wp-content/uploads/2018/11/medievo.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+#staticBackdrop{
+  background: url("https://lh3.googleusercontent.com/proxy/LsJa0idWaajiDWv1nobnc9xlr3RmiX47D_xWeGV5FDD74cWA0k5flC3wBmKgLEfBX3O6isejvoB_7-8u42ni5oOblp-aq57BpwlXKeAPhAFgQZmQiRa1a7MPTvlqiOpBKrHT_wzuKGFqd3v2-ArNy2nlQkg") no-repeat center center;
+}
+
+#staticBackdropLabel{
+  color: red !important;
+}
+
+#action{
+  padding-bottom: 30px;
+}
+
+#SI{
+  display: block;
+  float: left;
+  margin-left: 40%;
+}
+
+#NO{
+  display: block;
+  float: right;
+  margin-right: 40%;
+}
