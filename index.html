@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Giavarini-Tosato</title>
+  <title>Regni.io</title>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
-<body>
-  <h1>Progetto Informatica </h1>
-  <h2>Gruppo: Lorenzo Giavarini-Cicero (aka Matteo Tosato)</h2>
-  <p>Per nostro progetto abbiamo 2 idee:</p>
-  <ol> 
-  	<li>Un gioco per browser chiamato Polmon.ite (work in progress). Il gioco sarà una versione parody del famosissimo gioco Plague.inc in cui il giocatore interpreterà il ruolo di un morbo mortale con lo scopo di sterminare la popolazione mondiale.</li>
-  	<li>Un gioco per browser che richiama Reigns in cui l'utente ha il compito di governare un regno. Il suo compito sarà anche quello di gestire le risorse e di non farle finire. Se una risorsa si esaurirà, sarà game over.</li>
-  </ol>
+<body onload="gameTime(); creaevento(); game();">
+  <div class="jumbotron" id="tit">
+    <h1 class="display-5"><b>Regni.io</b></h1>
+    <h6 class="lead-3">Il gioco ufficiale Giavarini-Tosato</h6>
+    <hr class="my-5">
+    <p>Tempo di gioco: <span id="time"></span></p>
+  </div>
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">You loooose!!</h5>
+        </div>
+        <div class="modal-body">
+          <p>Sei stato decapitato, vuoi ricaricare la pagina e rinascere?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="Reload" onclick="reloading();">Sì</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="action">
+    <h5><b>Risorse:</b></h5>
+    <p>Oro: <span id="gold"></span></p>
+    <p>Popolo: <span id="babbani"></span></p>
+    <p>Esercito: <span id="army"></span></p>
+    <p>Meme: <span id="meme"></span></p>
+    <div id="situation"></div>
+  </div>
+  <input class="btn btn-success" type="button" id="SI" value="Yes" onclick="risposta(sI); game()">
+  <input class="btn btn-danger" type="button" id="NO" value="No" onclick="risposta(nO); game();">
 </body>
 </html>
