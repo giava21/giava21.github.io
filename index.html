@@ -1,45 +1,154 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Regni.io</title>
-  <script type="text/javascript" src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</head>
-<body onload="gameTime(); creaevento(); game();">
-  <div class="jumbotron" id="tit">
-    <h1 class="display-5"><b>Regni.io</b></h1>
-    <h6 class="lead-3">Il gioco ufficiale Giavarini-Tosato</h6>
-    <hr class="my-5">
-    <p>Tempo di gioco: <span id="time"></span></p>
-  </div>
-  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">You loooose!!</h5>
-        </div>
-        <div class="modal-body">
-          <p>Sei stato decapitato, vuoi ricaricare la pagina e rinascere?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" id="Reload" onclick="reloading();">Sì</button>
+  <head>
+    <title>Regni.io</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </head>
+  <body onload="gameTime(); creaevento(); game();">
+    <div class="jumbotron" id="tit">
+      <h1 class="display-5"><b>Regni.io</b></h1>
+      <h6 class="lead-3">Il gioco ufficiale Giavarini-Tosato</h6>
+      <hr class="my-5">
+    </div>
+    <div class="modal fade" id="staticBackdropmt" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">T'è propria un eşen!!</h5>
+          </div>
+          <div class="modal-body">
+            <p>Il popolo non crede più in te e sei stato decapitato, vuoi ricaricare la pagina e rinascere?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="Reload" onclick="reloading();">Sì</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container" id="action">
-    <h5><b>Risorse:</b></h5>
-    <p>Oro: <span id="gold"></span></p>
-    <p>Popolo: <span id="babbani"></span></p>
-    <p>Esercito: <span id="army"></span></p>
-    <p>Meme: <span id="meme"></span></p>
-    <div id="situation"></div>
-  </div>
-  <input class="btn btn-success" type="button" id="SI" value="Yes" onclick="risposta(sI); game()">
-  <input class="btn btn-danger" type="button" id="NO" value="No" onclick="risposta(nO); game();">
-</body>
+    <div class="modal fade" id="staticBackdropmp" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">T'è propria un nessi!!</h5>
+          </div>
+          <div class="modal-body">
+            <p>Il popolo ti vede troppo serio e sei stato decapitato, vuoi ricaricare la pagina e rinascere?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="Reload" onclick="reloading();">Sì</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="staticBackdropl" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Te pèrs!!</h5>
+          </div>
+          <div class="modal-body">
+            <p>Sei stato decapitato, vuoi ricaricare la pagina e rinascere?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="Reload" onclick="reloading();">Sì</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="staticBackdropw" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Te vint!!!!!</h5>
+          </div>
+          <div class="modal-body">
+            <p>Bravissimo hai vinto!!! Gaudio Catellani sarebbe orgoglioso di te</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="Reload" onclick="reloading();">Sì</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="carosello">
+      <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="5000">
+            <img src="https://i.ibb.co/ncprSYS/Slide1.png"  alt="slide1" id="slide1">
+          </div>
+          <div class="carousel-item" data-interval="5000">
+            <img src="https://i.ibb.co/LhYVmqC/Slide2.png" alt="slide2" id="slide2">
+          </div>
+          <div class="carousel-item" data-interval="5000">
+            <img src="https://i.ibb.co/zNQ7z7M/Slide3.png" alt="slide3" id="slide3" >
+          </div>
+          <div class="carousel-item" data-interval="5000">
+            <img src="https://i.ibb.co/T0BTD0C/slide4.png" alt="slide4" id="slide4">
+          </div>
+          <div class="carousel-item" data-interval="5000">
+            <img src="https://i.ibb.co/SBcxXtp/Bianello.png" alt="slide5" id="slide5">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="container" id="corpo">
+      <div class="row">
+        <p id="tempo">Tempo di gioco: <span id="time"></span></p>
+      </div>
+      <div class="row">
+        <div class="col" id="action">
+          <h5 class="resources"><b>Risorse:</b></h5>
+          <p class="resources">Oro:</p>
+          <div class="progress" id="myProgressGold">
+            <div class="progress-bar" id="myBarGold" role="progressbar"></div>
+          </div>
+          <p class="resources">Popolo:</p>
+          <div  class="progress" id="myProgressBabbani">
+            <div class="progress-bar" id="myBarBabbani" role="progressbar"></div>
+          </div>
+          <p class="resources">Esercito:</p>
+          <div class="progress" id="myProgressArmy">
+            <div class="progress-bar" id="myBarArmy" role="progressbar"></div>
+          </div>
+          <p class="resources">Meme: </p>
+          <div class="progress" id="myProgressMeme">
+            <div class="progress-bar" id="myBarMeme" role="progressbar"></div>
+          </div>
+        </div>
+        <div class="col">
+          <img src="https://i.ibb.co/kD8gKn2/reggio-min.png" border="0" alt="Reggio" id="reggio" heigt="400" width="273">
+        </div>
+      </div>
+      <div class="row"> 
+        <p id="situation"></p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input class="btn btn-success" type="button" id="SI" value="Yes" onclick="risposta(yeS); game();">
+        </div>
+        <div class="col">
+          <input class="btn btn-danger" type="button" id="NO" value="No" onclick="risposta(nO); game();">
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="https://i.ibb.co/dgscM1Z/stemma.jpg" width="23" height="30" alt="">
+      </a>
+    </nav>
+  </body>
 </html>
